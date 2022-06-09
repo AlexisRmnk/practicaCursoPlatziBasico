@@ -1,0 +1,64 @@
+<!-- Ejemplo de comentario en HTML -->
+<!-- Ejemplo de comentario en CSS: usando /* y */ (lo mismo en JS) -->
+
+<!DOCTYPE HTML> <!-- buena practica para indicar estandar HTML 5-->
+
+<HTML>
+<head>
+    <meta charset="utf-8"/> <!-- etiqueta que no necesita cierre, se utiliza
+     para que las TILDES sean reconocidas por el navegador. aunque es Buena practica cerrarla-->
+   
+     <title>
+        Peso en Jupiter o en Marte
+    </title>
+
+    <style type="text/css"> /* style es utilizada para definir un codigo en CSS, Se coloca dentro de head
+    type="text/css" es un ATRIBUTO de la etiqueta */
+        body /* CON ESTO LE DAMOS ESTILO A LO QUE ESTE EN BODY */
+        {
+            background-color:cyan;
+            color:black;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PESO EN OTRO PLANETA</h1> <!-- TITULO HEADER-->
+    <p>PARRAFO1:</p>
+    <p>Pon tu peso en la tierra para ver cuanto pesas en otros planetas </p>
+    <script>
+        var usuario = prompt("Indicar su peso (en la tierra) ");
+        var planeta = prompt("Indicar planeta siguiento la siguiente leyenda: '1' para Marte y" +
+        " '2' para Jupiter ");
+        var pesoTierra = parseFloat(usuario);
+        pesoTierra = pesoTierra.toFixed(2);
+        var gTierra = 9.8; var gMarte = 3.7; var gJupiter = 24.8;
+        var resultadoPesoFinal;
+        var nombrePlaneta="";
+
+        if (planeta == 1) 
+        {
+            resultadoPesoFinal = pesoTierra * gMarte / gTierra;
+            resultadoPesoFinal = resultadoPesoFinal.toFixed(2); // para redondear numero a 2 cifras decimales
+            nombrePlaneta = "Marte";
+
+            document.write("Tu peso en "+nombrePlaneta+" es <strong>" + 
+                resultadoPesoFinal + " kilos</strong>");
+        } else if(planeta == 2) 
+        {
+            resultadoPesoFinal = pesoTierra * gJupiter / gTierra;
+            resultadoPesoFinal = resultadoPesoFinal.toFixed(2); // para redondear numero a 2 cifras decimales
+            nombrePlaneta = "Jupiter";
+            document.write("Tu peso en "+nombrePlaneta+" es <strong>" + 
+                resultadoPesoFinal + " kilos</strong>");
+
+        } else 
+        {
+            document.write("Escribiste mal la seleccion.\n<strong>Recargar Pagina</strong>");
+        }
+    </script>
+
+</body>
+
+</HTML>
